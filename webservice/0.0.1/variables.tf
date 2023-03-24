@@ -32,7 +32,7 @@ variable "cpu" {
 variable "memory" {
   type        = string
   description = "Memory"
-  default = "512Mi"
+  default = "100Mi"
 }
 # @label "Namespace"
 # @group "Advanced"

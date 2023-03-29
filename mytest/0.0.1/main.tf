@@ -21,6 +21,7 @@ variable "port" {
 
 variable "labels" {
   type = map(string)
+  description = "app labels"
 }
 
 resource "kubernetes_deployment" "deployment" {

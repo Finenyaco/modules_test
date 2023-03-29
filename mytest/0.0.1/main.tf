@@ -45,7 +45,7 @@ resource "kubernetes_deployment" "deployment" {
       spec {
         container {
           image = var.image
-          name  = var.deployment_name
+          name  = var.name
 
           port {
             container_port = var.port

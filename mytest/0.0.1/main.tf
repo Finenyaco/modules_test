@@ -1,4 +1,4 @@
-variable "deployment_name" {
+variable "name" {
   type = string
   description = "Deployment name"
 }
@@ -19,13 +19,13 @@ variable "port" {
   default = 80
 }
 
-variable "deployment_labels" {
+variable "labels" {
   type = map(string)
 }
 
 resource "kubernetes_deployment" "deployment" {
   metadata {
-    name = var.deployment_name
+    name = var.name
     labels = var.labels
   }
 
@@ -38,7 +38,7 @@ resource "kubernetes_deployment" "deployment" {
 
     template {
       metadata {
-        labels = var.deployment_labels
+        labels = var.labels
       }
 
       spec {
@@ -55,10 +55,6 @@ resource "kubernetes_deployment" "deployment" {
   }
 }
 
-variable "service_name" {
-  type = string
-  description = "Service name"
-}
 
 variable "service_port" {
   type = number
@@ -70,14 +66,14 @@ variable "target_port" {
   default = 80
 }
 
-variable "service_labels" {
+variable "labels" {
   type = map(string)
 }
 
 resource "kubernetes_service" "service" {
   metadata {
-    name = var.service_name
-    labels = var.service_labels
+    name = var.name
+    labels = var.labels
   }
 
   spec {

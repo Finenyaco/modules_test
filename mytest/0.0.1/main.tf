@@ -66,10 +66,6 @@ variable "target_port" {
   default = 80
 }
 
-variable "labels" {
-  type = map(string)
-}
-
 resource "kubernetes_service" "service" {
   metadata {
     name = var.name

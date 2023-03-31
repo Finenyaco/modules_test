@@ -48,7 +48,9 @@ provider "gitlab" {
   token = var.gitlab_token
 }
 
-resource "gitlab_project" "repo" {
+module "gitlab_project" "repo" {
+  source = "gitlabhq/gitlab"
+  version = "15.10.0"
   name                        = var.repo_name
   description                 = var.repo_description
   visibility_level            = var.repo_visibility

@@ -44,8 +44,13 @@ variable "enable_pages" {
   default     = false
 }
 
-provider "gitlab" {
-  token = var.gitlab_token
+terraform {
+  required_providers {
+    gitlab = {
+      source = "gitlabhq/gitlab"
+      version = "15.10.0"
+    }
+  }
 }
 
 resource "gitlab_project" "repo" {

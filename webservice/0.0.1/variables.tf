@@ -24,7 +24,7 @@ variable "env" {
 variable "cpu" {
   type        = string
   description = "CPU"
-  default = "0.5"
+  default = "0.2"
 }
 # @group "Resources"
 # @label "Memory"
@@ -48,3 +48,10 @@ variable "name" {
   description = "Name of the deployment resource. Auto-generated if empty."
   default = ""
 }
+
+variable "test_module" {
+  type        = string
+  description = "Test module output"
+  default = "Testing"
+}
+

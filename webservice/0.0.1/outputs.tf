@@ -7,3 +7,8 @@ output "ports" {
   description = "Service Ports"
   value       = var.ports
 }
+
+output "test_module" {
+  description = "Testing module output"
+  value       = var.test_module
+}

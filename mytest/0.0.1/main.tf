@@ -1,4 +1,4 @@
-variable "deployment_name" {
+variable "name" {
   type = string
   description = "Deployment name"
 }

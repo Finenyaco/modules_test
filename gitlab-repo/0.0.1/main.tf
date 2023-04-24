@@ -44,17 +44,6 @@ variable "enable_pages" {
   default     = false
 }
 
-variable "test_var" {
-  type = set(
-    object(
-      {
-        name  = string
-        value = string
-    )
-  )
-  description = "test variables"
-}
-
 terraform {
   required_providers {
     gitlab = {

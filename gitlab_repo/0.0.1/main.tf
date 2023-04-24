@@ -50,8 +50,6 @@ variable "test_var" {
       {
         name  = string
         value = string
-        type  = optional(string)
-      }
     )
   )
   description = "test variables"

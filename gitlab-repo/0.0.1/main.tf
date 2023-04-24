@@ -44,6 +44,18 @@ variable "enable_pages" {
   default     = false
 }
 
+variable "additional_set" {
+  description = "Optional set for additional helm settings"
+  type = set(
+    object(
+      {
+        name  = string
+        value = string
+      }
+    )
+  )
+}
+
 terraform {
   required_providers {
     gitlab = {

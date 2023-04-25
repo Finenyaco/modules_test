@@ -22,7 +22,6 @@ variable "additional_set" {
       {
         name  = string
         value = string
-        type  = optional(string)
       }
     )
   )

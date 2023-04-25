@@ -17,12 +17,5 @@ variable "repo_private" {
 
 variable "additional_set" {
   description = "Optional set for additional helm settings"
-  type = set(
-    object(
-      {
-        name  = string
-        value = string
-      }
-    )
-  )
+  type = set()
 }

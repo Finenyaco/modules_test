@@ -5,5 +5,5 @@ output "repo_name" {
 
 output "test_var" {
   description = "Testing var"
-  value = var.optional_var
+  value = var.buckets
 }

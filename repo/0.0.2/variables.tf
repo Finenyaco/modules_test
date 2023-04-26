@@ -17,13 +17,10 @@ variable "repo_private" {
 
 variable "additional_set" {
   description = "Optional set for additional helm settings"
-    type = set(
-    object(
+    type = object(
       {
         name  = string
-        value = string
-        type = optional(string)
+        value = optional(string, "test optional")
       }
     )
-  )
 }

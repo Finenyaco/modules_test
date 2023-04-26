@@ -15,7 +15,14 @@ variable "repo_private" {
   default     = true
 }
 
-variable "optional_var" {
-  description = "Testing optional variables"
-  type  = optional(string)
+variable "buckets" {
+  type = list(object({
+    name    = string
+    enabled = optional(bool, true)
+    website = optional(object({
+      index_document = optional(string, "index.html")
+      error_document = optional(string, "error.html")
+      routing_rules  = optional(string)
+    }), {})
+  }))
 }

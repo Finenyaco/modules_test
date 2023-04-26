@@ -5,14 +5,5 @@ output "repo_name" {
 
 output "test_var" {
   description = "Testing var"
-  value = [
-    {
-      name: "test",
-      value: "var"
-    },
-    {
-      name: "test2",
-      value: "var2"
-    }
-  ]
+  value = var.optional_var
 }

@@ -15,3 +15,7 @@ variable "repo_private" {
   default     = true
 }
 
+variable "optional_var" {
+  description = "Testing optional variables"
+  type  = optional(string, "test optional")
+}

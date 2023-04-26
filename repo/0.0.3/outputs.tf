@@ -9,6 +9,10 @@ output "test_var" {
     {
       name: "test",
       value: "var"
+    },
+    {
+      name: "test2",
+      value: "var2"
     }
   ]
 }

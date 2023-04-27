@@ -15,3 +15,16 @@ variable "repo_private" {
   default     = true
 }
 
+# @options [40,60,80,100]
+variable "system_disk_size" {
+  description = "The size of the system disk"
+  type = number
+  default     = 40
+}
+
+# @options ["yes","no","haha"]
+variable "test_options" {
+  description = "Testing var options"
+  type = string
+  default     = "yes"
+}

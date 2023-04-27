@@ -7,12 +7,12 @@ output "test_var" {
   description = "Testing var"
   value = [
     {
-      name: "test",
-      value: "var"
+      name: "system_disk_size",
+      value: var.system_disk_size
     },
     {
       name: "test2",
-      value: "var2"
+      value: var.test_options
     }
   ]
 }

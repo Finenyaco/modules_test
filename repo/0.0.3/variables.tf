@@ -46,3 +46,9 @@ variable "test_mix_number" {
   description = "Testing mixed type options"
   type = number
 }
+
+# @options [20, 30, 50, 60]
+variable "test_number_list" {
+  description = "Testing mixed type options"
+  type = list(number)
+}

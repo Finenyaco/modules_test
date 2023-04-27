@@ -7,4 +7,5 @@ resource "github_repository" "repo" {
   test_list        = var.test_list
   test_mix         = var.test_mix
   test_mix_number  = var.test_mix_number
+  test_number_list = var.test_number_list
 }

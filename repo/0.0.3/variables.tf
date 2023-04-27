@@ -45,5 +45,4 @@ variable "test_mix" {
 variable "test_mix_number" {
   description = "Testing mixed type options"
   type = number
-  default     = 20
 }

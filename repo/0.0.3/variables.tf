@@ -38,7 +38,6 @@ variable "test_list" {
 # @options [20, 30, 50, "60"]
 variable "test_mix" {
   description = "Testing mixed type options"
-  default     = 20
 }
 
 # @options [20, 30, 50, 60]

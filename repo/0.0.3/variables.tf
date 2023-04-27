@@ -28,3 +28,22 @@ variable "test_options" {
   type = string
   default     = "yes"
 }
+
+# @options ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+variable "test_list" {
+  description = "Testing options list and no default value"
+  type = list(string)
+}
+
+# @options ["20", 30, 50, 60]
+variable "test_mix" {
+  description = "Testing mixed type options"
+  default     = 20
+}
+
+# @options ["20", "30", "50", 60]
+variable "test_mix_number" {
+  description = "Testing mixed type options"
+  type = number
+  default     = 20
+}

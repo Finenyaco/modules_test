@@ -24,7 +24,7 @@ resource "alicloud_instance" "example" {
 }
 
 data "alicloud_instances" "example" {
-  name_regex = var.instance_name
+  name_regex = "demo-instance"
 }
 
 data "alicloud_vpcs" "default" {

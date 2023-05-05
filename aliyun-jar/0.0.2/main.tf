@@ -1,5 +1,5 @@
 resource "alicloud_instance" "example" {
-  instance_name        = "demo-instance"
+  instance_name        = var.instance_name
   instance_type        = var.instance_type
   image_id             = var.image_id
   system_disk_category = var.system_disk_category
@@ -24,7 +24,7 @@ resource "alicloud_instance" "example" {
 }
 
 data "alicloud_instances" "example" {
-  name_regex = "^demo.*"
+  name_regex = var.instance_name
 }
 
 data "alicloud_vpcs" "default" {

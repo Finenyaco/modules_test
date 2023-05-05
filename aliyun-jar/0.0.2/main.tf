@@ -52,3 +52,7 @@ resource "null_resource" "health_check" {
     }
   }
 }
+
+output "endpoint_public_ip" {
+  value = alicloud_instance.example.public_ip
+}

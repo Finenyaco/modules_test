@@ -1,7 +1,7 @@
-# output "endpoint_public_ip" {
-#   description = "public ip of the ECS instance"
-#   value = data.alicloud_instances.example.instances.0.public_ip
-# }
+output "endpoint_public_ip" {
+  description = "public ip of the ECS instance"
+  value = data.alicloud_instances.example.instances
+}
 
 output "instance_names" {
   description = "A list of instances names"

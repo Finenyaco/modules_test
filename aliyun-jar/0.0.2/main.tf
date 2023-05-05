@@ -23,12 +23,6 @@ resource "alicloud_instance" "example" {
               EOF
 }
 
-data "alicloud_instances" "example" {
-  status            = "Running"
-  availability_zone = "cn-shenzhen-d"
-  instance_name     = var.instance_name
-}
-
 data "alicloud_vpcs" "default" {
   name_regex = "default"
 }
@@ -39,6 +33,10 @@ data "alicloud_vswitches" "default" {
 
 data "alicloud_security_groups" "default" {
   name_regex = "default"
+}
+
+data "alicloud_instances" "example" {
+  status            = "Running"
 }
 
 resource "null_resource" "health_check" {

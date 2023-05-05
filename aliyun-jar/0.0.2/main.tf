@@ -24,6 +24,9 @@ resource "alicloud_instance" "example" {
 }
 
 data "alicloud_instances" "example" {
+  status            = "Running"
+  availability_zone = "cn-shenzhen-d"
+  instance_name     = var.instance_name
 }
 
 data "alicloud_vpcs" "default" {

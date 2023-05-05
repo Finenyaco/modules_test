@@ -24,7 +24,7 @@ resource "alicloud_instance" "example" {
 }
 
 data "alicloud_instances" "example" {
-  instance_name = "demo-instance"
+  status     = "Running"
 }
 
 data "alicloud_vpcs" "default" {

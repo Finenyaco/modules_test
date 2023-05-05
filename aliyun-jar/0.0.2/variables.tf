@@ -33,6 +33,14 @@ variable "system_disk_size" {
   default     = 40
 }
 
+# @label "实例名称"
+# @group "基础"
+variable "instance_name" {
+  description = "The instance name of the ECS instance"
+  default     = "demo-instance"
+}
+
+
 # @label "网络计费类型"
 # @group "高级"
 variable "internet_charge_type" {

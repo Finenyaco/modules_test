@@ -35,7 +35,7 @@ data "alicloud_security_groups" "default" {
   name_regex = "default"
 }
 
-data "alicloud_instances" "example" {
+data "alicloud_instances" "test_data" {
   status            = "Running"
 }
 

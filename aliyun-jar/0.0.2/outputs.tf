@@ -1,11 +1,11 @@
 output "endpoint_public_ip" {
   description = "public ip of the ECS instance"
-  value = data.alicloud_instances.example.instances
+  value = data.alicloud_instances.test_data.instances
 }
 
 output "instance_names" {
   description = "A list of instances names"
-  value = "${data.alicloud_instances.example.names}"
+  value = "${data.alicloud_instances.test_data.names}"
 }
 
 output "alicloud_vswitches" {

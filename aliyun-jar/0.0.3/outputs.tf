@@ -1,6 +1,6 @@
 output "endpoint_public_ip" {
   description = "public ip of the ECS instance"
-  value = data.alicloud_instances.test_data.instances.0.public_ip
+  value = try(data.alicloud_instances.test_data.instances.0.public_ip, "")
 }
 
 output "instance_names" {

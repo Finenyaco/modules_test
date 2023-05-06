@@ -2,7 +2,7 @@ data "alicloud_instances" "example" {
   
   status            = "Running"
   availability_zone = "cn-shenzhen-d"
-  instance_name     = var.instance_name
+  instance_name     = "demo-instance"
 }
 
 output "instance_names" {

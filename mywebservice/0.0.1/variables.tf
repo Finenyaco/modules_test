@@ -6,6 +6,7 @@ variable "image" {
 }
 # @label "Ports"
 # @group "Basic"
+# @hidden
 variable "ports" {
   type        = list(number)
   description = "Service ports to expose"

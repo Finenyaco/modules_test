@@ -120,7 +120,15 @@ variable "test_show_if" {
 # @options [20, 30, 50, 60]
 # @show_if "test_null=20"
 variable "test_show_if_B" {
-  description = "Testing show_if var does not exist "
+  description = "Testing show_if var does not exist"
   type = list(number)
   default = [10]
+}
+
+# @group "Test/group2"
+# @hidden true
+variable "test_hidden" {
+  description = "Testing hidden var"
+  type = string
+  default = "hello world!"
 }

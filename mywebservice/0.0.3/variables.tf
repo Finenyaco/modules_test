@@ -122,4 +122,5 @@ variable "test_show_if" {
 variable "test_show_if_B" {
   description = "Testing show_if var does not exist "
   type = list(number)
+  default = 10
 }

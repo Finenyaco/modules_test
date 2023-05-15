@@ -1,10 +1,9 @@
 # @label "Image Name"
 # @group "Basic"
-# @hidden
 variable "image" {
   type        = string
   description = "Docker image name"
-  default = "wordpress"
+  default = "nginx"
 }
 # @label "Ports"
 # @group "Basic"

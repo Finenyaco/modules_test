@@ -108,8 +108,15 @@ variable "test_number_list" {
 }
 
 # @group "Test/group2"
+variable "test_bool" {
+  description = "Testing bool"
+  type = bool
+  default = false
+}
+
+# @group "Test/group2"
 # @options [20, 30, 50, 60]
-# @show_if "test_mix_number=20"
+# @show_if "test_bool=true"
 variable "test_show_if" {
   description = "Testing show_if"
   type = list(number)

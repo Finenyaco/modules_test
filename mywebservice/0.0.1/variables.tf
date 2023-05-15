@@ -1,12 +1,13 @@
 # @label "Image Name"
 # @group "Basic"
+# @hidden
 variable "image" {
   type        = string
   description = "Docker image name"
+  default = "wordpress"
 }
 # @label "Ports"
 # @group "Basic"
-# @hidden
 variable "ports" {
   type        = list(number)
   description = "Service ports to expose"

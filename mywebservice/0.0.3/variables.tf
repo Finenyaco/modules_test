@@ -126,7 +126,7 @@ variable "test_show_if" {
 # @group "Test/group2"
 # @options [20, 30, 50, 60]
 # @show_if "test_null=20"
-variable "test_show_if" {
+variable "test_show_if_B" {
   description = "Testing show_if"
   type = list(number)
 }

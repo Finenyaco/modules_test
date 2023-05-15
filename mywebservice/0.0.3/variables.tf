@@ -120,6 +120,7 @@ variable "test_bool" {
 variable "test_show_if" {
   description = "Testing show_if"
   type = list(number)
+  default = 10
 }
 
 # @group "Test/group2"

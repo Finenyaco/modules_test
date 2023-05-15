@@ -126,7 +126,7 @@ variable "test_show_if_B" {
 }
 
 # @group "Test/group2"
-# @hidden true
+# @hidden
 variable "test_hidden" {
   description = "Testing hidden var"
   type = string

@@ -108,15 +108,8 @@ variable "test_number_list" {
 }
 
 # @group "Test/group2"
-variable "test_bool" {
-  description = "Testing bool"
-  type = bool
-  default = false
-}
-
-# @group "Test/group2"
 # @options [20, 30, 50, 60]
-# @show_if "test_bool=true"
+# @show_if "test_mix_number=20"
 variable "test_show_if" {
   description = "Testing show_if"
   type = list(number)
@@ -127,6 +120,6 @@ variable "test_show_if" {
 # @options [20, 30, 50, 60]
 # @show_if "test_null=20"
 variable "test_show_if_B" {
-  description = "Testing show_if"
+  description = "Testing show_if var does not exist "
   type = list(number)
 }

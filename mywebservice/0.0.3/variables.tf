@@ -34,6 +34,12 @@ variable "memory" {
   description = "Memory"
   default = "100Mi"
 }
+# @group "Resources"
+variable "test_show_if_A" {
+  type        = string
+  description = "Testing show_if"
+  default = "hello"
+}
 # @label "Namespace"
 # @group "Advanced"
 variable "namespace" {
@@ -97,5 +103,21 @@ variable "test_mix_number" {
 # @options [20, 30, 50, "60"]
 variable "test_number_list" {
   description = "Testing mixed type options"
+  type = list(number)
+}
+
+# @group "Test/group2"
+# @options [20, 30, 50, 60]
+# @show_if "test_mix_number=20"
+variable "test_show_if" {
+  description = "Testing show_if"
+  type = list(number)
+}
+
+# @group "Test/group2"
+# @options [20, 30, 50, 60]
+# @show_if "test_null=20"
+variable "test_show_if" {
+  description = "Testing show_if"
   type = list(number)
 }

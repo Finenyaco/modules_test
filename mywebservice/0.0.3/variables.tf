@@ -113,7 +113,7 @@ variable "test_number_list" {
 variable "test_show_if" {
   description = "Testing show_if"
   type = list(number)
-  default = 10
+  default = [10]
 }
 
 # @group "Test/group2"
@@ -122,5 +122,5 @@ variable "test_show_if" {
 variable "test_show_if_B" {
   description = "Testing show_if var does not exist "
   type = list(number)
-  default = 10
+  default = [10]
 }

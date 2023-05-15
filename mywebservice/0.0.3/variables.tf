@@ -35,6 +35,7 @@ variable "memory" {
   default = "100Mi"
 }
 # @group "Resources"
+# @show_if "memory='1Gi'"
 variable "test_show_if_A" {
   type        = string
   description = "Testing show_if"

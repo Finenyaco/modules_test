@@ -59,7 +59,7 @@ resource "aws_lb" "test" {
   name               = var.instance_name
   internal           = false
   load_balancer_type = "network"
-  subnets            = aws_subnet.test_resource.id
+  subnets            = [aws_subnet.test_resource.id]
 
   tags = {
     Environment = "test"

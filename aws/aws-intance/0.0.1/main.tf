@@ -54,3 +54,19 @@ resource "aws_instance" "test_resource" {
     Name = var.instance_name
   }
 }
+
+resource "aws_lb" "test" {
+  name               = var.instance_name
+  internal           = false
+  load_balancer_type = "network"
+  subnets            = aws_subnet.test_resource.id
+
+  tags = {
+    Environment = "test"
+  }
+}
+
+resource "aws_eip" "ec2_instance" {
+  instance = aws_instance.test_resource.id
+  domain   = "vpc"
+}

@@ -55,6 +55,14 @@ resource "aws_instance" "test_resource" {
   }
 }
 
+resource "aws_internet_gateway" "test_gw" {
+  vpc_id = aws_vpc.test_resource.id
+
+  tags = {
+    Name = var.instance_name
+  }
+}
+
 resource "aws_lb" "test" {
   name               = var.instance_name
   internal           = false
@@ -66,7 +74,9 @@ resource "aws_lb" "test" {
   }
 }
 
+
 resource "aws_eip" "ec2_instance" {
   instance = aws_instance.test_resource.id
   domain   = "vpc"
+  depends_on = [aws_internet_gateway.test_gw]
 }

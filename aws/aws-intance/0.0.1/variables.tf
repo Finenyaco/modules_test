@@ -31,8 +31,8 @@ variable "subnet_cidr_block" {
 
 # @group "Advanced"
 variable "network_interface_ip" {
-    type        = string
+    type        = set(string)
     description = "network interface ip"
-    default = "172.16.10.100"
+    default = ["172.16.10.100"]
 }
 

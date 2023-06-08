@@ -19,7 +19,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_vpc" "test_resource" {
   cidr_block = var.vpc_cidr_block
   tags = {
-    Name = "test_resource"
+    Name = var.instance_name
   }
 }
 
@@ -29,7 +29,7 @@ resource "aws_subnet" "test_resource" {
   availability_zone = var.availability_zone
 
   tags = {
-    Name = "test_resource"
+    Name = var.instance_name
   }
 }
 
@@ -38,7 +38,7 @@ resource "aws_network_interface" "test_resource" {
   private_ips = var.network_interface_ip
 
   tags = {
-    Name = "test_resource"
+    Name = var.instance_name
   }
 }
 
@@ -51,6 +51,6 @@ resource "aws_instance" "test_resource" {
   }
 
   tags = {
-    Name = "test_resource"
+    Name = var.instance_name
   }
 }

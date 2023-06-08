@@ -14,6 +14,14 @@ variable "availability_zone" {
     default = "ap-east-1a"
 }
 
+# @label "Instance Name"
+# @group "Basic"
+variable "instance_name" {
+    type        = string
+    description = "instance name"
+    default = "test_resource"
+}
+
 
 # @group "Advanced"
 variable "vpc_cidr_block" {

@@ -68,6 +68,7 @@ resource "aws_lb" "test" {
   internal           = false
   load_balancer_type = "network"
   subnets            = [aws_subnet.test_resource.id]
+  depends_on = [aws_internet_gateway.test_gw]
 
   tags = {
     Environment = "test"

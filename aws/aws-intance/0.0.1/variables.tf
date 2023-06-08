@@ -33,6 +33,6 @@ variable "subnet_cidr_block" {
 variable "network_interface_ip" {
     type        = string
     description = "network interface ip"
-    default = ["172.16.10.100"]
+    default = "172.16.10.100"
 }
 

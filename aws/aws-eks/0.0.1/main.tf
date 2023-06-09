@@ -39,7 +39,7 @@ resource "aws_vpc" "test_resource" {
 
 resource "aws_subnet" "test_resource1" {
   vpc_id            = aws_vpc.test_resource.id
-  cidr_block        = var.subnet_cidr_block
+  cidr_block        = var.subnet_cidr_block1
   availability_zone = var.availability_zone1
 
   tags = {
@@ -49,7 +49,7 @@ resource "aws_subnet" "test_resource1" {
 
 resource "aws_subnet" "test_resource2" {
   vpc_id            = aws_vpc.test_resource.id
-  cidr_block        = var.subnet_cidr_block
+  cidr_block        = var.subnet_cidr_block2
   availability_zone = var.availability_zone2
 
   tags = {

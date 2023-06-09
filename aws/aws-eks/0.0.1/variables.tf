@@ -18,7 +18,13 @@ variable "vpc_cidr_block" {
 }
 
 
-variable "subnet_cidr_block" {
+variable "subnet_cidr_block1" {
+    type        = string
+    description = "subnet cidr block"
+    default = "172.16.10.0/24"
+}
+
+variable "subnet_cidr_block2" {
     type        = string
     description = "subnet cidr block"
     default = "172.16.20.0/24"

@@ -9,6 +9,7 @@ resource "aws_rds_cluster" "example" {
   master_password         = var.password
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
+  skip_final_snapshot     = false
 
     serverlessv2_scaling_configuration {
     max_capacity = 1.0

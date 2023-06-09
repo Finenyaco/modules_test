@@ -29,3 +29,9 @@ variable "network_interface_ip" {
     description = "network interface ip"
     default = ["172.16.10.100"]
 }
+
+variable "availability_zone" {
+    type        = string
+    description = "avaliability zone"
+    default = "ap-east-1a"
+}

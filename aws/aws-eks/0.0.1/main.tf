@@ -1,15 +1,3 @@
-variable "cluster_name" {
-    type = string
-    description = "Name of the cluster. Must be between 1-100 characters in length. Must begin with an alphanumeric character, and must only contain alphanumeric characters, dashes and underscores (^[0-9A-Za-z][A-Za-z0-9-_]+$)."
-    default = "test-eks"
-}
-
-variable "instance_name" {
-    type        = string
-    description = "instance name"
-    default = "test_resource"
-}
-
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
@@ -41,6 +29,7 @@ resource "aws_iam_role_policy_attachment" "example-AmazonEKSVPCResourceControlle
 }
 
 
+# Create a VPC
 resource "aws_vpc" "test_resource" {
   cidr_block = var.vpc_cidr_block
   tags = {

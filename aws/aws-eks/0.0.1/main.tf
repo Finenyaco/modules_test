@@ -37,10 +37,20 @@ resource "aws_vpc" "test_resource" {
   }
 }
 
-resource "aws_subnet" "test_resource" {
+resource "aws_subnet" "test_resource1" {
   vpc_id            = aws_vpc.test_resource.id
   cidr_block        = var.subnet_cidr_block
-  availability_zone = var.availability_zone
+  availability_zone = var.availability_zone1
+
+  tags = {
+    Name = var.instance_name
+  }
+}
+
+resource "aws_subnet" "test_resource2" {
+  vpc_id            = aws_vpc.test_resource.id
+  cidr_block        = var.subnet_cidr_block
+  availability_zone = var.availability_zone2
 
   tags = {
     Name = var.instance_name
@@ -48,7 +58,7 @@ resource "aws_subnet" "test_resource" {
 }
 
 resource "aws_network_interface" "test_resource" {
-  subnet_id   = aws_subnet.test_resource.id
+  subnet_id   = aws_subnet.test_resource1.id
   private_ips = var.network_interface_ip
 
   tags = {
@@ -61,7 +71,7 @@ resource "aws_eks_cluster" "example" {
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
-    subnet_ids = [aws_subnet.test_resource.id]
+    subnet_ids = [aws_subnet.test_resource1.id, aws_subnet.aws_subnet.test_resource2.id]
   }
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.

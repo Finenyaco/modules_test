@@ -24,7 +24,7 @@ variable "username" {
 
 variable password {
     type = string
-    descrdefault = "database password"
+    description = "database password"
     default = "testing"  
 }
 

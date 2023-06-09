@@ -25,7 +25,7 @@ variable "username" {
 variable password {
     type = string
     descrdefault = "database password"
-    defadefault = "testing"  
+    default = "testing"  
 }
 
 

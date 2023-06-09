@@ -80,7 +80,8 @@ resource "aws_eks_cluster" "example" {
     aws_iam_role_policy_attachment.example-AmazonEKSClusterPolicy,
     aws_iam_role_policy_attachment.example-AmazonEKSVPCResourceController,
     aws_vpc.test_resource,
-    aws_subnet.test_resource
+    aws_subnet.test_resource1,
+    aws_subnet.test_resource2,
   ]
 }
 

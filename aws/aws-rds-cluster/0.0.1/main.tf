@@ -28,11 +28,26 @@ variable password {
     default = "testing"  
 }
 
+variable "engine" {
+    type = string
+    default = "aurora-postgresql"
+}
+
+variable "engine_version" {
+    type = string
+    default = "14.7-R1"
+}
+
+variable "engine_mode" {
+    type = string
+    default = "provisioned"
+}
 
 resource "aws_rds_cluster" "default" {
   cluster_identifier      = "aurora-cluster-demo"
-  engine                  = "aurora-mysql"
-  engine_version          = "5.7.mysql_aurora.2.03.2"
+  engine                  = var.engine
+  engine_version          = var.engine_version
+  engine_mode             = var.engine_mode
   availability_zones      = [var.availability_zone1, var.availability_zone2]
   database_name           = var.database_name
   master_username         = var.username
@@ -40,3 +55,4 @@ resource "aws_rds_cluster" "default" {
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
 }
+

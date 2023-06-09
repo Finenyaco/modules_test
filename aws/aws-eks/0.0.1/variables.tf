@@ -30,8 +30,14 @@ variable "network_interface_ip" {
     default = ["172.16.10.100"]
 }
 
-variable "availability_zone" {
+variable "availability_zone1" {
     type        = string
     description = "avaliability zone"
     default = "ap-east-1a"
+}
+
+variable "availability_zone2" {
+    type        = string
+    description = "avaliability zone"
+    default = "ap-east-1b"
 }

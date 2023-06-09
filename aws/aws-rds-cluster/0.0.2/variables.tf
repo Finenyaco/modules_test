@@ -1,3 +1,9 @@
+variable "cluster_name" {
+    type = string
+    description = "Name of rds cluster"
+    default = "aurora-cluster-demo"
+}
+
 variable "availability_zone1" {
     type = string
     description = "EC2 Availability Zones"

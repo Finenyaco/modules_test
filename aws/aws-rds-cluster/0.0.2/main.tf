@@ -1,5 +1,5 @@
 resource "aws_rds_cluster" "example" {
-  cluster_identifier      = "aurora-cluster-demo"
+  cluster_identifier      = var.cluster_name
   engine                  = var.engine
   engine_version          = var.engine_version
   engine_mode             = var.engine_mode

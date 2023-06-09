@@ -21,7 +21,7 @@ variable "vpc_cidr_block" {
 variable "subnet_cidr_block" {
     type        = string
     description = "subnet cidr block"
-    default = "172.16.10.0/24"
+    default = "172.16.20.0/24"
 }
 
 variable "network_interface_ip" {

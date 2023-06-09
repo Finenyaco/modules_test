@@ -42,17 +42,3 @@ variable "engine_mode" {
     type = string
     default = "provisioned"
 }
-
-resource "aws_rds_cluster" "default" {
-  cluster_identifier      = "aurora-cluster-demo"
-  engine                  = var.engine
-  engine_version          = var.engine_version
-  engine_mode             = var.engine_mode
-  availability_zones      = [var.availability_zone1, var.availability_zone2]
-  database_name           = var.database_name
-  master_username         = var.username
-  master_password         = var.password
-  backup_retention_period = 5
-  preferred_backup_window = "07:00-09:00"
-}
-

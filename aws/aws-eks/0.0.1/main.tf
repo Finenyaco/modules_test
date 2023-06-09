@@ -4,6 +4,12 @@ variable "cluster_name" {
     default = "test-eks"
 }
 
+variable "instance_name" {
+    type        = string
+    description = "instance name"
+    default = "test_resource"
+}
+
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
@@ -34,12 +40,39 @@ resource "aws_iam_role_policy_attachment" "example-AmazonEKSVPCResourceControlle
   role       = aws_iam_role.example.name
 }
 
+
+resource "aws_vpc" "test_resource" {
+  cidr_block = var.vpc_cidr_block
+  tags = {
+    Name = var.instance_name
+  }
+}
+
+resource "aws_subnet" "test_resource" {
+  vpc_id            = aws_vpc.test_resource.id
+  cidr_block        = var.subnet_cidr_block
+  availability_zone = var.availability_zone
+
+  tags = {
+    Name = var.instance_name
+  }
+}
+
+resource "aws_network_interface" "test_resource" {
+  subnet_id   = aws_subnet.test_resource.id
+  private_ips = var.network_interface_ip
+
+  tags = {
+    Name = var.instance_name
+  }
+}
+
 resource "aws_eks_cluster" "example" {
   name     = "example"
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
-    subnet_ids = [aws_subnet.example1.id, aws_subnet.example2.id]
+    subnet_ids = [aws_subnet.test_resource.id]
   }
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.
@@ -47,6 +80,8 @@ resource "aws_eks_cluster" "example" {
   depends_on = [
     aws_iam_role_policy_attachment.example-AmazonEKSClusterPolicy,
     aws_iam_role_policy_attachment.example-AmazonEKSVPCResourceController,
+    aws_vpc.test_resource,
+    aws_subnet.test_resource
   ]
 }
 

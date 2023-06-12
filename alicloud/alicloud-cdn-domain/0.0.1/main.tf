@@ -1,5 +1,5 @@
 variable "name" {
-  default = "*.tsfxwx.com"
+  default = "example.com"
 }
 
 variable "scope" {

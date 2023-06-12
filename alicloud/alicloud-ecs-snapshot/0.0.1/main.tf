@@ -62,4 +62,5 @@ resource "alicloud_ecs_snapshot" "example" {
     Created = "TF"
     For     = "example"
   }
+  depends_on = [ alicloud_ecs_disk_attachment.example ]
 }

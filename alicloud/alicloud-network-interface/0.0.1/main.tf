@@ -38,8 +38,8 @@ data "alicloud_resource_manager_resource_groups" "default" {
 
 resource "alicloud_ecs_network_interface" "default" {
   network_interface_name = var.name
-  vswitch_id             = alicloud_vswitch.default.id
-  security_group_ids     = [alicloud_security_group.default.id]
+  vswitch_id             = alicloud_vswitch.vswitch.id
+  security_group_ids     = [alicloud_security_group.group.id]
   description            = "Basic test"
   primary_ip_address     = "192.168.0.2"
   tags = {

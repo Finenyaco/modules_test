@@ -64,3 +64,13 @@ resource "alicloud_ecs_snapshot" "example" {
   }
   depends_on = [ alicloud_ecs_disk_attachment.example ]
 }
+
+resource "alicloud_snapshot" "snapshot" {
+  disk_id     = alicloud_ecs_disk.example.id
+  name        = "test-snapshot"
+  description = "this snapshot is created for testing"
+  tags = {
+    version = "1.2"
+  }
+  depends_on = [ alicloud_ecs_disk_attachment.example ]
+}

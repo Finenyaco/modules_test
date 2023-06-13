@@ -1,11 +1,11 @@
 variable "db_type" {
   type = string
-  default = "PostgreSQL"
+  default = "MySQL"
 }
 
 variable "db_version" {
   type = string
-  default = "14"
+  default = "8.0"
 }
 
 

@@ -36,10 +36,6 @@ resource "aws_subnet" "test_resource" {
 resource "aws_instance" "test_resource" {
   ami                  = data.aws_ami.ubuntu.id
   instance_type        = var.instance_type
-  network_interface {
-    network_interface_id = aws_network_interface.test_resource.id
-    device_index         = 0
-  }
 
   tags = {
     Name = var.instance_name

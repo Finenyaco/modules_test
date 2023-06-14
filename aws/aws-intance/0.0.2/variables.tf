@@ -36,3 +36,10 @@ variable "subnet_cidr_block" {
     description = "subnet cidr block"
     default = "172.16.10.0/24"
 }
+
+# @group "Test"
+variable "test" {
+    type        = string
+    description = "For testing"
+    default = "manual"
+}

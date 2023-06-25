@@ -3,7 +3,7 @@
 variable "instance_type" {
     type        = string
     description = "instance type"
-    default = "t3.small"
+    default = "t3.nano"
 }
 
 # @label "Availablity Zone"
@@ -22,26 +22,11 @@ variable "instance_name" {
     default = "test-resource"
 }
 
-
-# @group "Advanced"
-variable "vpc_cidr_block" {
-    type        = string
-    description = "vpc cidr block"
-    default = "172.16.0.0/16"
-}
-
-# @group "Advanced"
-variable "subnet_cidr_block" {
-    type        = string
-    description = "subnet cidr block"
-    default = "172.16.10.0/24"
-}
-
 # @group "Advanced"
 variable "private_ip" {
     type        = string
     description = "network interface private ip"
-    default = "172.16.10.100"
+    default = "192.168.1.60"
 }
 
 # @group "Test"

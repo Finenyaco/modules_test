@@ -1,23 +1,5 @@
-# Create a VPC
-resource "aws_vpc" "test_resource" {
-  cidr_block = var.vpc_cidr_block
-  tags = {
-    Name = var.instance_name
-  }
-}
-
-resource "aws_subnet" "test_resource" {
-  vpc_id            = aws_vpc.test_resource.id
-  cidr_block        = var.subnet_cidr_block
-  availability_zone = var.availability_zone
-
-  tags = {
-    Name = var.instance_name
-  }
-}
-
 resource "aws_network_interface" "test_resource" {
-  subnet_id   = aws_subnet.test_resource.id
+  subnet_id   = "subnet-09a04f409272d8c2f"
   private_ips = [var.private_ip]
 
   tags = {

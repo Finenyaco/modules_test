@@ -9,7 +9,7 @@ variable "test_num" {
 
 variable "test_bool" {
   type       = bool
-  default    = true
+  default    = false
 }
 
 variable "test_lst" {
@@ -41,6 +41,42 @@ variable "test_object" {
         domain  = "example.com"
     }
   }
+}
+
+# @show_if "test_num!=123"
+variable "show_uneq" {
+  type      = string
+  default   = "ok"
+}
+
+# @show_if "test_num>123"
+variable "show_gt" {
+  type      = string
+  default   = "ok"
+}
+
+# @show_if "test_num<123"
+variable "show_lt" {
+  type      = string
+  default   = "ok"
+}
+
+# @show_if "test_str=yes&&test_bool=true"
+variable "show_and" {
+  type      = string
+  default   = "ok"
+}
+
+# @show_if "test_num>=123"
+variable "show_gteq" {
+  type      = string
+  default   = "ok"
+}
+
+# @show_if "test_num<=123"
+variable "show_lteq" {
+  type      = string
+  default   = "ok"
 }
 
 output "output_str" {

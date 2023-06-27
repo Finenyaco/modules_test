@@ -67,6 +67,12 @@ variable "show_and" {
   default   = "ok"
 }
 
+# @show_if "test_str=yes||test_bool=true"
+variable "show_and" {
+  type      = string
+  default   = "ok"
+}
+
 # @show_if "test_num>=123"
 variable "show_gteq" {
   type      = string

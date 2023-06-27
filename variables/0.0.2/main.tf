@@ -68,7 +68,7 @@ variable "show_and" {
 }
 
 # @show_if "test_str=yes||test_bool=true"
-variable "show_and" {
+variable "show_or" {
   type      = string
   default   = "ok"
 }

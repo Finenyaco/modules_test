@@ -1,9 +1,16 @@
-# @group "Basic"
+# @group "Basic/sub1"
 variable "test_str" {
   type        = string
 }
 
-# @group "Basic"
+# @group "Basic/sub1"
+# @group "Advanced/sub2"
+variable "test_str2" {
+  type        = string
+  default     = "test"
+}
+
+# @group "Basic/sub1"
 variable "test_num" {
   type        = number
 }

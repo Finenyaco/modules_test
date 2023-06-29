@@ -49,19 +49,19 @@ variable "test_object" {
 }
 
 # @show_if "test_num!=123"
-variable "show_uneq123" {
+variable "show_uneq" {
   type      = string
   default   = "ok"
 }
 
 # @show_if "test_num>123"
-variable "show_gt123" {
+variable "show_gt" {
   type      = string
   default   = "ok"
 }
 
 # @show_if "test_num<123"
-variable "show_lt123" {
+variable "show_lt" {
   type      = string
   default   = "ok"
 }
@@ -79,13 +79,13 @@ variable "show_or" {
 }
 
 # @show_if "test_num>=123"
-variable "show_gteq123" {
+variable "show_gteq" {
   type      = string
   default   = "ok"
 }
 
 # @show_if "test_num<=123"
-variable "show_lteq123" {
+variable "show_lteq" {
   type      = string
   default   = "ok"
 }

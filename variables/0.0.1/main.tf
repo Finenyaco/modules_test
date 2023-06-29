@@ -3,23 +3,25 @@ variable "test_str" {
   default     = "variable-test"
 }
 
+variable "test_str2" {
+  type        = string
+  default     = "variable-test2"
+}
+
 variable "test_num" {
-  type        = number
   default     = 123
 }
 
 variable "test_bool" {
   type       = bool
-  default    = true
+  default    = false
 }
 
 variable "test_lst" {
-  type        = list(number)
   default     = [80, 443]
 }
 
 variable "test_map" {
-  type        = map(string)
   default     = {
     name      = "John"
     age       = "30"
@@ -44,6 +46,54 @@ variable "test_object" {
         domain  = "example.com"
     }
   }
+}
+
+# @show_if "test_num!=123"
+variable "show_uneq123" {
+  type      = string
+  default   = var.test_num
+}
+
+# @show_if "test_num>123"
+variable "show_gt123" {
+  type      = string
+  default   = var.test_num
+}
+
+# @show_if "test_num<123"
+variable "show_lt123" {
+  type      = string
+  default   = var.test_num
+}
+
+# @show_if "test_str=yes&&test_bool=true"
+variable "show_and" {
+  type      = string
+  default   = "ok"
+}
+
+# @show_if "test_str=yes||test_bool=true"
+variable "show_or" {
+  type      = string
+  default   = "ok"
+}
+
+# @show_if "test_num>=123"
+variable "show_gteq123" {
+  type      = string
+  default   = var.test_num
+}
+
+# @show_if "test_num<=123"
+variable "show_lteq123" {
+  type      = string
+  default   = var.test_num
+}
+
+# @show_if "test_srt=test&&test_num=22||test_bool=true&&test_str2=66"
+variable "show_com" {
+  type      = string
+  default   = testok
 }
 
 output "output_str" {

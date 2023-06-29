@@ -90,7 +90,6 @@ variable "show_lteq123" {
   default   = var.test_num
 }
 
-# @show_if "test_srt=test&&test_num=22||test_bool=true&&test_str2=66"
 variable "show_com" {
   type      = string
   default   = testok
